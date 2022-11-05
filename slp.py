@@ -62,7 +62,6 @@ def GetJson(host: str, port: int = 25565):
 
     return json.loads(data.decode('utf8'))
 
-
 def _UnpackVarint(s):
     num = 0
     for i in range(5):
