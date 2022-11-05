@@ -1,2 +1,23 @@
 # SLP
-A simple way to interact with Minecraft's SLP 
+A simple way to interact with Minecraft's SLP protocol without any third-party libraries
+
+## Example
+```python
+import SLP
+
+data = slp.server(host = server_ip)
+server = data.Update()[1]
+
+''' Dict of data '''
+data = ({
+  'version': server['version']['name'],
+  'protocol': server['version']['protocol'],
+  'modded': True if 'modinfo' in server else False,
+  'description': [ x['text'].rstrip() for x in server['description']['extra'] ],
+  'players': server['players']
+})
+
+''' Output json data to console '''
+print( json.dumps(data, indent=3) )
+
+```
