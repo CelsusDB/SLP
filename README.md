@@ -1,9 +1,18 @@
-# SLP
+# MineSLP
 A simple way to interact with Minecraft's SLP protocol without any third-party libraries
 
-## Example
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+
+```bash
+pip install MineSLP
+```
+
+## Usage
+
 ```python
-import SLP
+import MineSLP
 
 data = slp.server(host = server_ip)
 server = data.Update()[1]
@@ -19,5 +28,4 @@ data = ({
 
 ''' Output json data to console '''
 print( json.dumps(data, indent=3) )
-
 ```
